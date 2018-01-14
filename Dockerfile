@@ -1,3 +1,5 @@
 FROM circleci/node:8
 
-RUN curl https://install.meteor.com/ | sh
+RUN mkdir -p ~/.meteor && \
+    chown -R circleci:circleci ~/.meteor && \
+    curl https://install.meteor.com/ | sh
